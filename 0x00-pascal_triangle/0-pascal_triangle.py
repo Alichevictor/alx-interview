@@ -29,5 +29,5 @@ def pascal_triangle(n):
             else:
                 arr.append(matrix[i-1][j-1] + matrix[i-1][j])
         matrix.append(arr)
-    return 
+    return matrix
     
