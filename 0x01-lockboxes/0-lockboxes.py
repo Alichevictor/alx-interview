@@ -1,19 +1,31 @@
 #!/usr/bin/python3
-"""`canUnlockAll` module
-"""
+""" Module that checks locked boxes """
 
 
 def canUnlockAll(boxes):
-    """A method that determines if all `boxes` can be opened
-        @boxes: A list of list of positive ints
-        rtype: `True` if all boxes can be opened, else `False`
-    """
-    if not boxes or type(boxes) is not list:
+    """ Method that determines if all boxes can be opened """
+
+    if boxes == 0:
         return False
-    unlocked_boxes = [0]
-    for i in unlocked_boxes:
-        for key in boxes[i]:
-            if key not in unlocked_boxes and key < len(boxes):
-                unlocked_boxes.append(key)
-    return len(unlocked_boxes) == len(boxes)
-    
+
+    if not isinstance(boxes, list):
+        return False
+
+    if len(boxes) == 0:
+        return False
+
+    check = [0]
+    list_ing = [i for i in range(len(boxes))]
+
+    for in_check in check:
+        for in_boxes in boxes[in_check]:
+            if in_boxes not in check and in_boxes in list_ing:
+                if in_boxes >= len(boxes):
+                    return False
+                check.append(in_boxes)
+
+    if len(check) == len(boxes):
+        return True
+    else:
+        return False
+        
