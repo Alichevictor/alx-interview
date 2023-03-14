@@ -33,4 +33,4 @@ function CharRequest (idx, url, characters, limit) {
       console.error('error:', error);
     }
   });
-  
+}
